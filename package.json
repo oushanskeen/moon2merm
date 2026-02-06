@@ -7,7 +7,7 @@
     "url": "https://github.com/oushanskeen/moon2merm/issues"
   },
   "bin": {
-    "moon2merm": "./bin/moon2merm.js"
+    "moon2merm": "bin/moon2merm.js"
   },
   "repository": {
     "type": "git",
