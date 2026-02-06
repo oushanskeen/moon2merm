@@ -80,4 +80,5 @@ const outFile = path.join(argv.outdir, `mermaidTaskGraph.md`);
 
 fs.writeFileSync(outFile, mermaidString, "utf8");
 
-console.log(`✅ Mermaid diagram written to: ${outFile}`);
+console.log(`[moon2merm.js] Mermaid diagram created:\n\n${mermaidString}\n`);
+console.log(`[moon2merm.js] Diagram written to: ${outFile}`);

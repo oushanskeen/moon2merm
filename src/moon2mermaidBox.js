@@ -29,7 +29,6 @@ const moon2mermaidBox = (moonGraph, runReport) => {
         .map(({ label, error, status }) => ({ label: label.replace("RunTask(", "").replace(")", ""), error, status }))
 
     const enrich_withStatusFrom_ = (stratReady, runReportStatus) => stratReady.map(stratReadyRecord => {
-        console.log("[stratReadyStatusEnreached] stratReadyRecord: ", stratReadyRecord)
         const statusObject = runReportStatus.filter(runReportStatusRecord => stratReadyRecord.name == runReportStatusRecord.label)
         if (statusObject.length > 0) {
             return { ...stratReadyRecord, status: statusObject[0].status }
