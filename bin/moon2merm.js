@@ -9,7 +9,7 @@ import path from "path";
 const argv = yargs(hideBin(process.argv))
   .scriptName("moon2merm")
   .usage(`
-moon2merm - Convert Moon task graph + run report to Mermaid diagram
+moon2merm - Convert Moon task graph and run report into a Mermaid diagram in order to make task dependencies and execution status explicit
 
 Usage:
   moon2merm --moonGraph <file> --runReport <file> --outdir <dir>

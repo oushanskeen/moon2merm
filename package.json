@@ -1,7 +1,7 @@
 {
   "name": "moon2merm",
-  "version": "1.0.0",
-  "description": "Convert Moon task graph + run report to Mermaid diagram",
+  "version": "1.0.2",
+  "description": "Convert Moon task graph and run report into a Mermaid diagram in order to make task dependencies and execution status explicit.",
   "homepage": "https://github.com/oushanskeen/moon2merm#readme",
   "bugs": {
     "url": "https://github.com/oushanskeen/moon2merm/issues"
