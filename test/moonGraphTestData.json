@@ -1,0 +1,469 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "args": [
+          "./scripts/access_services.sh"
+        ],
+        "command": "bash",
+        "deps": [
+          {
+            "args": null,
+            "env": {},
+            "target": "config:deploy_kibana",
+            "optional": null
+          }
+        ],
+        "env": {
+          "NAMESPACE": "logging"
+        },
+        "id": "access_services",
+        "inputs": [
+          {
+            "file": "scripts/access_services.sh"
+          },
+          {
+            "glob": "/.moon/*.{pkl,yml}",
+            "cache": true
+          }
+        ],
+        "options": {
+          "affectedPassInputs": false,
+          "allowFailure": false,
+          "cache": true,
+          "inferInputs": true,
+          "internal": false,
+          "interactive": false,
+          "mergeArgs": "append",
+          "mergeDeps": "append",
+          "mergeEnv": "append",
+          "mergeInputs": "append",
+          "mergeOutputs": "append",
+          "persistent": false,
+          "priority": "normal",
+          "retryCount": 0,
+          "runDepsInParallel": true,
+          "runInCI": "affected",
+          "runFromWorkspaceRoot": false,
+          "shell": true
+        },
+        "platform": "unknown",
+        "state": {},
+        "target": "config:access_services",
+        "toolchains": [
+          "system"
+        ],
+        "type": "test"
+      },
+      {
+        "args": [
+          "./scripts/deploy_kibana.sh"
+        ],
+        "command": "bash",
+        "deps": [
+          {
+            "args": null,
+            "env": {},
+            "target": "config:deploy_filebeat",
+            "optional": null
+          }
+        ],
+        "env": {
+          "NAMESPACE": "logging"
+        },
+        "id": "deploy_kibana",
+        "inputs": [
+          {
+            "file": "scripts/deploy_kibana.sh"
+          },
+          {
+            "glob": "/.moon/*.{pkl,yml}",
+            "cache": true
+          }
+        ],
+        "options": {
+          "affectedPassInputs": false,
+          "allowFailure": false,
+          "cache": true,
+          "inferInputs": true,
+          "internal": false,
+          "interactive": false,
+          "mergeArgs": "append",
+          "mergeDeps": "append",
+          "mergeEnv": "append",
+          "mergeInputs": "append",
+          "mergeOutputs": "append",
+          "persistent": false,
+          "priority": "normal",
+          "retryCount": 0,
+          "runDepsInParallel": true,
+          "runInCI": "affected",
+          "runFromWorkspaceRoot": false,
+          "shell": true
+        },
+        "platform": "unknown",
+        "state": {},
+        "target": "config:deploy_kibana",
+        "toolchains": [
+          "system"
+        ],
+        "type": "test"
+      },
+      {
+        "args": [
+          "./scripts/deploy_filebeat.sh"
+        ],
+        "command": "bash",
+        "deps": [
+          {
+            "args": null,
+            "env": {},
+            "target": "config:deploy_elasticsearch",
+            "optional": null
+          }
+        ],
+        "env": {
+          "NAMESPACE": "logging"
+        },
+        "id": "deploy_filebeat",
+        "inputs": [
+          {
+            "file": "scripts/deploy_filebeat.sh"
+          },
+          {
+            "glob": "/.moon/*.{pkl,yml}",
+            "cache": true
+          }
+        ],
+        "options": {
+          "affectedPassInputs": false,
+          "allowFailure": false,
+          "cache": true,
+          "inferInputs": true,
+          "internal": false,
+          "interactive": false,
+          "mergeArgs": "append",
+          "mergeDeps": "append",
+          "mergeEnv": "append",
+          "mergeInputs": "append",
+          "mergeOutputs": "append",
+          "persistent": false,
+          "priority": "normal",
+          "retryCount": 0,
+          "runDepsInParallel": true,
+          "runInCI": "affected",
+          "runFromWorkspaceRoot": false,
+          "shell": true
+        },
+        "platform": "unknown",
+        "state": {},
+        "target": "config:deploy_filebeat",
+        "toolchains": [
+          "system"
+        ],
+        "type": "test"
+      },
+      {
+        "args": [
+          "./scripts/deploy_elasticsearch.sh"
+        ],
+        "command": "bash",
+        "deps": [
+          {
+            "args": null,
+            "env": {},
+            "target": "config:setup_helm_repos",
+            "optional": null
+          }
+        ],
+        "env": {
+          "NAMESPACE": "logging"
+        },
+        "id": "deploy_elasticsearch",
+        "inputs": [
+          {
+            "file": "scripts/deploy_elasticsearch.sh"
+          },
+          {
+            "glob": "/.moon/*.{pkl,yml}",
+            "cache": true
+          }
+        ],
+        "options": {
+          "affectedPassInputs": false,
+          "allowFailure": false,
+          "cache": true,
+          "inferInputs": true,
+          "internal": false,
+          "interactive": false,
+          "mergeArgs": "append",
+          "mergeDeps": "append",
+          "mergeEnv": "append",
+          "mergeInputs": "append",
+          "mergeOutputs": "append",
+          "persistent": false,
+          "priority": "normal",
+          "retryCount": 0,
+          "runDepsInParallel": true,
+          "runInCI": "affected",
+          "runFromWorkspaceRoot": false,
+          "shell": true
+        },
+        "platform": "unknown",
+        "state": {},
+        "target": "config:deploy_elasticsearch",
+        "toolchains": [
+          "system"
+        ],
+        "type": "test"
+      },
+      {
+        "args": [
+          "./scripts/setup_helm_repos.sh"
+        ],
+        "command": "bash",
+        "deps": [
+          {
+            "args": null,
+            "env": {},
+            "target": "config:reset_logging_namespace",
+            "optional": null
+          }
+        ],
+        "env": {
+          "NAMESPACE": "logging"
+        },
+        "id": "setup_helm_repos",
+        "inputs": [
+          {
+            "file": "scripts/setup_helm_repos.sh"
+          },
+          {
+            "glob": "/.moon/*.{pkl,yml}",
+            "cache": true
+          }
+        ],
+        "options": {
+          "affectedPassInputs": false,
+          "allowFailure": false,
+          "cache": true,
+          "inferInputs": true,
+          "internal": false,
+          "interactive": false,
+          "mergeArgs": "append",
+          "mergeDeps": "append",
+          "mergeEnv": "append",
+          "mergeInputs": "append",
+          "mergeOutputs": "append",
+          "persistent": false,
+          "priority": "normal",
+          "retryCount": 0,
+          "runDepsInParallel": true,
+          "runInCI": "affected",
+          "runFromWorkspaceRoot": false,
+          "shell": true
+        },
+        "platform": "unknown",
+        "state": {},
+        "target": "config:setup_helm_repos",
+        "toolchains": [
+          "system"
+        ],
+        "type": "test"
+      },
+      {
+        "args": [
+          "./scripts/reset_logging_namespace.sh"
+        ],
+        "command": "bash",
+        "deps": [
+          {
+            "args": null,
+            "env": {},
+            "target": "config:configure_minikube",
+            "optional": null
+          }
+        ],
+        "env": {
+          "NAMESPACE": "logging"
+        },
+        "id": "reset_logging_namespace",
+        "inputs": [
+          {
+            "file": "scripts/reset_logging_namespace.sh"
+          },
+          {
+            "glob": "/.moon/*.{pkl,yml}",
+            "cache": true
+          }
+        ],
+        "options": {
+          "affectedPassInputs": false,
+          "allowFailure": false,
+          "cache": true,
+          "inferInputs": true,
+          "internal": false,
+          "interactive": false,
+          "mergeArgs": "append",
+          "mergeDeps": "append",
+          "mergeEnv": "append",
+          "mergeInputs": "append",
+          "mergeOutputs": "append",
+          "persistent": false,
+          "priority": "normal",
+          "retryCount": 0,
+          "runDepsInParallel": true,
+          "runInCI": "affected",
+          "runFromWorkspaceRoot": false,
+          "shell": true
+        },
+        "platform": "unknown",
+        "state": {},
+        "target": "config:reset_logging_namespace",
+        "toolchains": [
+          "system"
+        ],
+        "type": "test"
+      },
+      {
+        "args": [
+          "./scripts/configure_minikube.sh"
+        ],
+        "command": "bash",
+        "env": {
+          "NAMESPACE": "logging"
+        },
+        "id": "configure_minikube",
+        "inputs": [
+          {
+            "file": "scripts/configure_minikube.sh"
+          },
+          {
+            "glob": "/.moon/*.{pkl,yml}",
+            "cache": true
+          }
+        ],
+        "options": {
+          "affectedPassInputs": false,
+          "allowFailure": false,
+          "cache": true,
+          "inferInputs": true,
+          "internal": false,
+          "interactive": false,
+          "mergeArgs": "append",
+          "mergeDeps": "append",
+          "mergeEnv": "append",
+          "mergeInputs": "append",
+          "mergeOutputs": "append",
+          "persistent": false,
+          "priority": "normal",
+          "retryCount": 0,
+          "runDepsInParallel": true,
+          "runInCI": "affected",
+          "runFromWorkspaceRoot": false,
+          "shell": true
+        },
+        "platform": "unknown",
+        "state": {},
+        "target": "config:configure_minikube",
+        "toolchains": [
+          "system"
+        ],
+        "type": "test"
+      },
+      {
+        "command": "noop",
+        "deps": [
+          {
+            "args": null,
+            "env": {},
+            "target": "config:access_services",
+            "optional": null
+          }
+        ],
+        "env": {
+          "NAMESPACE": "logging"
+        },
+        "id": "set_elk",
+        "inputs": [
+          {
+            "glob": "**/*",
+            "cache": true
+          },
+          {
+            "glob": "/.moon/*.{pkl,yml}",
+            "cache": true
+          }
+        ],
+        "options": {
+          "affectedPassInputs": false,
+          "allowFailure": false,
+          "cache": true,
+          "inferInputs": true,
+          "internal": false,
+          "interactive": false,
+          "mergeArgs": "append",
+          "mergeDeps": "append",
+          "mergeEnv": "append",
+          "mergeInputs": "append",
+          "mergeOutputs": "append",
+          "persistent": false,
+          "priority": "normal",
+          "retryCount": 0,
+          "runDepsInParallel": true,
+          "runInCI": "affected",
+          "runFromWorkspaceRoot": false,
+          "shell": true
+        },
+        "platform": "unknown",
+        "state": {
+          "defaultInputs": true
+        },
+        "target": "config:set_elk",
+        "toolchains": [
+          "system"
+        ],
+        "type": "test"
+      }
+    ],
+    "node_holes": [],
+    "edge_property": "directed",
+    "edges": [
+      [
+        5,
+        6,
+        "required"
+      ],
+      [
+        4,
+        5,
+        "required"
+      ],
+      [
+        3,
+        4,
+        "required"
+      ],
+      [
+        2,
+        3,
+        "required"
+      ],
+      [
+        1,
+        2,
+        "required"
+      ],
+      [
+        0,
+        1,
+        "required"
+      ],
+      [
+        7,
+        0,
+        "required"
+      ]
+    ]
+  }
+}

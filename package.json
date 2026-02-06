@@ -1,0 +1,28 @@
+{
+  "name": "moon2merm",
+  "version": "1.0.0",
+  "description": "Convert Moon task graph + run report to Mermaid diagram",
+  "homepage": "https://github.com/oushanskeen/moon2merm#readme",
+  "bugs": {
+    "url": "https://github.com/oushanskeen/moon2merm/issues"
+  },
+  "bin": {
+    "moon2merm": "./bin/moon2merm.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oushanskeen/moon2merm.git"
+  },
+  "license": "ISC",
+  "author": "oushanskeen",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "yargs": "^18.0.0"
+  },
+  "exports": {
+    ".": "./src/moon2mermaidBox.js"
+  }
+}
