@@ -45,22 +45,35 @@ const moon2mermaidBox = (moonGraph, runReport) => {
         return stratReadyStatusEnriched.map(e => ({ source: e.name, target: e.parent, type: e.status }))
     }
 
-    const makeMermaidStringFrom_ = (stratReadyStatusEnreachedGraphReady) => [
-        "```mermaid",
-        "stateDiagram-v2",
-        "",
-        "%% 🟢:passed",
-        "%% 🔴:failed",
-        "%% 🔵:unknown",
-        "",
-        stratReadyStatusEnreachedGraphReady.map(e => {
-            return e.source.replace(":", "_") + " --> " + e.target.replace(":", "_") + " : require " +
-                (e.type == "unknown" ? "🔵"
-                    : e.type == "failed" ? "🔴" : "🟢")
-        }).join("\n"),
-        "",
-        "```"
-    ].join("\n")
+    const makeMermaidStringFrom_ = (stratReadyStatusEnreachedGraphReady) => {
+        const dict = {}
+        stratReadyStatusEnreachedGraphReady.map((e, i) => {
+            const state = e.type == "unknown" ? "🔵"
+                : e.type == "failed" ? "🔴" : "🟢"
+            dict[e.source] = state
+        })
+        return [
+            "```mermaid",
+            "stateDiagram-v2",
+            "",
+            "%% 🟢:passed",
+            "%% 🔴:failed",
+            "%% 🔵:unknown",
+            "",
+            stratReadyStatusEnreachedGraphReady.map((e, i) => {
+                const sourceState = dict[e.source]
+                const targetState = i == stratReadyStatusEnreachedGraphReady.length - 1
+                    ? "🟢"
+                    : dict[e.target]
+                return sourceState + e.source.replace(":", "_")
+                    + " --> "
+                    + targetState + e.target.replace(":", "_")
+                    + ": " + targetState + "require"
+            }).join("\n"),
+            "",
+            "```"
+        ].join("\n")
+    }
 
     // moonToMermaidBox
     const $ = {
