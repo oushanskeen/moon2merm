@@ -1,1 +1,2 @@
-moon2merm --moonGraph ./test/moonGraphTestData.json --runReport ./test/runReportTestData.json --outdir ./test
+moon task-graph --json > ./test/moonGraphTestData.json
+node ./bin/moon2merm.js --moonGraph ./test/moonGraphTestData.json --runReport ./.moon/cache/runReport.json --outdir ./test

@@ -13,6 +13,13 @@ moon2merm - Convert Moon task graph and run report into a Mermaid diagram in ord
 
 Usage:
   moon2merm --moonGraph <file> --runReport <file> --outdir <dir>
+
+  ! contractsGraph folder with contract graph required 
+
+  e.g.
+  moon run contractsGraph:hello
+  moon task-graph --json > ./test/moonGraphTestData.json
+  moon2merm --moonGraph ./test/moonGraphTestData.json --runReport ./.moon/cache/runReport.json --outdir ./test
 `)
   .option("moonGraph", {
     type: "string",

@@ -1,0 +1,14 @@
+tasks:
+  hello:
+    command: 'bash ./one.sh'
+    inputs:
+      - './one.sh'
+    # options:
+    #   interactive: true
+    #   runInCI: true
+  bye:
+    command: 'bash ./two.sh'
+    inputs:
+      - './two.sh'
+    deps:
+      - 'hello'
